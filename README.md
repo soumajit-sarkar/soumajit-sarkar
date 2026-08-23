@@ -1,17 +1,43 @@
+# Hi, I'm Soumajit Sarkar 👋
+
+## Senior Python Backend Engineer
+
+I build backend systems, REST APIs, and third-party integrations using **Python, Django, Django REST Framework, and FastAPI**.
+
+My focus is on reliable backend engineering involving **transactional workflows, asynchronous processing, concurrency control, database design, external integrations, and scalable API architectures**.
+
+---
+
+## 🚀 What I Build
+
+* High-throughput REST APIs
+* Python backend systems with Django, DRF, and FastAPI
+* Transaction-heavy business workflows
+* Third-party API integrations
+* Asynchronous processing with RabbitMQ and Celery
+* Redis-based caching and distributed locking
+* Relational database systems
+* Modular monolith architectures
+* Authentication and role-based authorization
+* Background jobs and scheduled processing
+* Logging, auditing, and error-handling workflows
+
+---
+
 # ⭐ Featured Projects
 
 ## 1. Plex Gaming Wallet Gateway
 
 ### Production Backend Integration Platform
 
-A scalable backend integration gateway for online gaming platforms, responsible for game launches, player balance operations, wallet debits/credits, transaction recovery, and provider callbacks.
+A scalable backend integration gateway for online gaming platforms, handling **game launches, player balance operations, wallet debits/credits, transaction recovery, and provider callbacks**.
 
-The platform integrates multiple gaming providers and client platforms while protecting wallet consistency under concurrent requests.
+The platform integrates multiple gaming providers and client platforms while maintaining wallet consistency under concurrent requests.
 
 ### System Scale
 
 | Metric                | Approximate Scale |
-| --------------------- | ----------------: |
+| :-------------------- | ----------------: |
 | API throughput        |   1,000–1,500 RPS |
 | Transactions          |       1M+ / month |
 | Provider integrations |               60+ |
@@ -58,44 +84,17 @@ The platform integrates multiple gaming providers and client platforms while pro
                      Application Logs
 ```
 
-### Engineering Challenges
+### Key Engineering Areas
 
-#### Concurrent Wallet Operations
-
-Multiple requests can attempt to modify the same player's wallet concurrently.
-
-Redis distributed locking is used to coordinate critical wallet operations and reduce the risk of conflicting updates.
-
-#### Transaction Reliability
-
-Wallet operations require reliable transaction tracking and recovery mechanisms so that interrupted or failed operations can be detected and reconciled.
-
-#### Asynchronous Processing
-
-RabbitMQ separates API-facing operations from asynchronous processing and provider-specific workloads.
-
-#### Provider Integration Architecture
-
-Different gaming providers expose different APIs and request/response formats.
-
-Provider-specific integration modules isolate those differences from the core business workflows.
-
-#### High-Throughput Processing
-
-The platform operates at approximately 1,000–1,500 RPS, requiring careful handling of database operations, asynchronous workloads, concurrency, and external integrations.
-
-### My Engineering Focus
-
-* Backend API development
-* Gaming provider integrations
-* Wallet transaction workflows
-* Concurrent transaction handling
+* Concurrent wallet transaction handling
 * Redis distributed locking
 * RabbitMQ-based asynchronous processing
-* MySQL database operations
+* Gaming provider integrations
+* Transaction tracking and recovery
+* High-throughput API processing
+* MySQL transactional data
 * MongoDB application logging
 * External API communication using HTTPX
-* Transaction recovery and reliability mechanisms
 
 ### Technology
 
@@ -107,9 +106,9 @@ The platform operates at approximately 1,000–1,500 RPS, requiring careful hand
 
 ### Modular Enterprise Order Management Platform
 
-An enterprise Order Management System designed to manage the complete order lifecycle across products, inventory, payments, warehouses, invoices, refunds, notifications, reporting, and auditing.
+An enterprise Order Management System designed around the complete order lifecycle, including **products, inventory, orders, payments, warehouses, invoices, refunds, notifications, reporting, and auditing**.
 
-The system is designed as a **modular monolith**, with business domains separated into dedicated Django applications while maintaining a single deployable backend.
+The system follows a **modular monolith architecture**, with business domains separated into dedicated Django applications while remaining within a single backend.
 
 ### Architecture
 
@@ -157,7 +156,7 @@ The system is designed as a **modular monolith**, with business domains separate
                 └──────────────────────────────┘
 
                 ┌──────────────────────────────┐
-                │          MongoDB              │
+                │           MongoDB             │
                 │ Audit / Application / Error  │
                 │ Access Logs                  │
                 └──────────────────────────────┘
@@ -178,40 +177,17 @@ The system is designed as a **modular monolith**, with business domains separate
 * Reporting
 * Audit Logging
 
-### Engineering Focus
+### Key Engineering Areas
 
-#### Modular Monolith Architecture
-
-Business domains are isolated into dedicated Django applications with clear boundaries between responsibilities.
-
-The architecture provides modularity without introducing unnecessary microservice complexity.
-
-#### Order & Inventory Consistency
-
-Order placement requires coordinated changes across order and inventory state.
-
-Database transactions and appropriate locking strategies are used to maintain consistency during critical operations.
-
-#### Concurrency Control
-
-Inventory operations can be affected by concurrent order requests.
-
-Redis-based locking and database-level transaction management are used where appropriate to protect critical workflows.
-
-#### Asynchronous Processing
-
-Celery handles background workloads that should not block API requests, including notifications, report generation, invoice-related processing, and retryable tasks.
-
-#### Logging & Auditing
-
-MongoDB is used for application-oriented logging, including:
-
-* Audit logs
-* Application logs
-* Error logs
-* Access logs
-
-Retention and cleanup mechanisms are considered to prevent uncontrolled log growth.
+* Modular monolith architecture
+* Transactional order processing
+* Inventory consistency and concurrency control
+* Redis-based distributed locking
+* Celery background processing
+* Payment and refund workflows
+* Invoice and notification processing
+* Audit and application logging
+* MySQL relational data management
 
 ### Technology
 
@@ -223,9 +199,7 @@ Retention and cleanup mechanisms are considered to prevent uncontrolled log grow
 
 ### FastAPI + PostgreSQL Backend System
 
-An enterprise management backend built with FastAPI and PostgreSQL, designed around structured REST APIs, relational data modeling, validation, business logic separation, and production-oriented backend practices.
-
-The project focuses on maintainable backend architecture rather than simply exposing database CRUD operations.
+An enterprise management backend built with **FastAPI and PostgreSQL**, focused on structured REST APIs, relational data modeling, validation, business logic separation, and maintainable backend architecture.
 
 ### Architecture
 
@@ -262,17 +236,17 @@ The project focuses on maintainable backend architecture rather than simply expo
                     └─────────────────┘
 ```
 
-### Engineering Focus
+### Key Engineering Areas
 
 * FastAPI REST API development
 * PostgreSQL database design
 * SQLAlchemy-based persistence
 * Pydantic request/response validation
-* Separation of API and business logic
+* API and business-logic separation
 * Dependency injection
 * Centralized error handling
 * Environment-based configuration
-* OpenAPI API documentation
+* OpenAPI documentation
 * Automated testing with pytest
 * Production deployment preparation
 
@@ -283,8 +257,6 @@ The project focuses on maintainable backend architecture rather than simply expo
 ---
 
 # 🧠 Backend Engineering Focus
-
-I particularly enjoy working on problems involving:
 
 ### API Design
 
@@ -300,7 +272,7 @@ Handling race conditions in transaction-heavy systems using database transaction
 
 ### Asynchronous Processing
 
-Designing background workflows using RabbitMQ and Celery where synchronous request processing would create unnecessary latency or coupling.
+Designing background workflows using RabbitMQ and Celery where asynchronous processing improves reliability, scalability, or responsiveness.
 
 ### Integrations
 
@@ -308,7 +280,7 @@ Building reliable integrations with external APIs and adapting provider-specific
 
 ### Reliability
 
-Thinking about retries, idempotency, transaction recovery, failure handling, logging, and consistency rather than treating the happy path as the entire system.
+Designing for retries, idempotency, transaction recovery, failure handling, logging, and data consistency.
 
 ---
 
@@ -342,24 +314,22 @@ Thinking about retries, idempotency, transaction recovery, failure handling, log
 
 # 📌 Engineering Principles
 
-I prefer:
-
 * Clear separation of concerns
 * Modular architecture
 * Explicit business logic
-* Database integrity over application assumptions
+* Strong database integrity
 * Idempotent and retry-safe workflows
 * Proper transaction boundaries
 * Defensive error handling
-* Observable systems with meaningful logs
+* Meaningful application logging
 * Simple architectures before unnecessary microservices
-* Code that can be maintained by another engineer
+* Maintainable code and clear domain boundaries
 
 ---
 
 # 📫 Let's Connect
 
-I'm interested in working on backend engineering projects involving:
+I'm interested in backend engineering projects involving:
 
 * Python backend development
 * Django / DRF applications
